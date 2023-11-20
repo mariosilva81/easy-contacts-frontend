@@ -59,7 +59,10 @@ export const ClientContextProvider = ({
   ) => {
     try {
       setLoading(true);
-      const { data } = await api.post<IClientWithToken>('/sessions/login', formData);
+      const { data } = await api.post<IClientWithToken>(
+        '/sessions/login',
+        formData,
+      );
       setClient(data.client);
       localStorage.setItem('@TOKEN', data.access_token);
       localStorage.setItem('@CLIENT_ID', data.client.id);
