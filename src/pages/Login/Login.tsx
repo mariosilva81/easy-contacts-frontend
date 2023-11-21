@@ -1,6 +1,6 @@
-import { StyledContainer, StyledFormContainer } from "../../styles/grid";
-import LoginForm from "../../components/LoginForm/LoginForm";
-import Navbar from "../../components/Navbar/Navbar";
+import { StyledContainer, StyledFormContainer } from '../../styles/grid';
+import LoginForm from '../../components/LoginForm/LoginForm';
+import Navbar from '../../components/Navbar/Navbar';
 
 const Login = () => {
   return (
