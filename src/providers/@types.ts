@@ -1,3 +1,4 @@
+import { TCreateFormValues } from '../schemas/createFormSchema';
 import { TEditFormValues } from '../schemas/editFormSchema';
 import { TLoginFormValues } from '../schemas/loginFormSchema';
 import { TRegisterFormValues } from '../schemas/registerFormSchema';
@@ -27,7 +28,7 @@ export interface IContactAddResponse {
 
 export interface IContactContext {
   addContact: (
-    formData: TEditFormValues,
+    formData: TCreateFormValues,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>,
   ) => Promise<void>;
   removeContact: (

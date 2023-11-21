@@ -22,7 +22,7 @@ export const ContactsContextProvider = ({
   const [isAddModal, setIsAddModal] = useState(false);
   const [isEditModal, setIsEditModal] = useState(false);
   const clientToken = localStorage.getItem('@TOKEN');
-  const clientId: string = localStorage.getItem('@CLIENT_ID')!;
+  const clientId = localStorage.getItem('@CLIENT_ID')!;
 
   useEffect(() => {
     if (client) {

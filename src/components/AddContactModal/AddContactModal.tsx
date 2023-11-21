@@ -3,13 +3,13 @@ import { FormStyles } from '../../styles/form';
 import { StyledHeadline3, StyledParagraph } from '../../styles/typography';
 import { StyledContactsModal } from './style';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { TEditFormValues, editFormSchema } from '../../schemas/editFormSchema';
 import Input from '../Input/Input';
 import { StyledButton } from '../../styles/buttons';
 import { useContactsContext } from '../../providers/ContactContext';
 import { useState } from 'react';
 import { useOutClick } from '../../hooks/useOutClick';
 import { useKeydownPress } from '../../hooks/useKeydownPress';
+import { TCreateFormValues, createFormSchema } from '../../schemas/createFormSchema';
 
 const AddContactsModal = () => {
   const [loading, setLoading] = useState(false);
@@ -23,11 +23,11 @@ const AddContactsModal = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<TEditFormValues>({
-    resolver: zodResolver(editFormSchema),
+  } = useForm<TCreateFormValues>({
+    resolver: zodResolver(createFormSchema),
   });
 
-  const submit: SubmitHandler<TEditFormValues> = async (formData) => {
+  const submit: SubmitHandler<TCreateFormValues> = async (formData) => {
     await addContact(formData, setLoading);
     reset();
   };
