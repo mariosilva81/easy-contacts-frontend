@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { api } from '../services/api.ts';
 import { toast } from 'react-toastify';
 import { TEditFormValues } from '../schemas/editFormSchema';
+import { TCreateFormValues } from '../schemas/createFormSchema';
 import {
   Contact,
   IClientContextProviderProps,
@@ -21,6 +22,7 @@ export const ContactsContextProvider = ({
   const [isAddModal, setIsAddModal] = useState(false);
   const [isEditModal, setIsEditModal] = useState(false);
   const clientToken = localStorage.getItem('@TOKEN');
+  const clientId: string = localStorage.getItem('@CLIENT_ID')!;
 
   useEffect(() => {
     if (client) {
@@ -29,9 +31,11 @@ export const ContactsContextProvider = ({
   }, []);
 
   const addContact = async (
-    formData: TEditFormValues,
+    formData: TCreateFormValues,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>,
   ) => {
+    formData.client_id = clientId;
+  
     try {
       setLoading(true);
       const { data } = await api.post<IContactAddResponse>(
@@ -43,20 +47,21 @@ export const ContactsContextProvider = ({
           },
         },
       );
+      
       setContactsList((contactsList) => [...contactsList, data]);
-
+  
       toast.success('Contato criado com sucesso.', {
         className: 'toast-sucess',
       });
     } catch (error: any) {
-      toast.error(`$${error.message}`, {
+      toast.error(`${error.message}`, {
         className: 'toast-error',
       });
     } finally {
       setLoading(false);
       setIsAddModal(false);
     }
-  };
+  };  
 
   const removeContact = async (
     contactId: string,

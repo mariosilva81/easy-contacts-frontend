@@ -8,7 +8,7 @@ import {
   Client,
   IClientContext,
   IClientContextProviderProps,
-  IClientWithToken,
+  TokenData,
 } from './@types';
 
 export const ClientContext = createContext({} as IClientContext);
@@ -59,12 +59,13 @@ export const ClientContextProvider = ({
   ) => {
     try {
       setLoading(true);
-      const { data } = await api.post<IClientWithToken>(
-        '/sessions/login',
+      const { data } = await api.post<TokenData>(
+        '/session/login',
         formData,
       );
+      
       setClient(data.client);
-      localStorage.setItem('@TOKEN', data.access_token);
+      localStorage.setItem('@TOKEN', data.access_token.token);
       localStorage.setItem('@CLIENT_ID', data.client.id);
       navigate(`/dashboard`);
     } catch (error) {

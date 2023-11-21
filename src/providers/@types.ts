@@ -60,12 +60,16 @@ export interface Client {
   phone: string;
   created_at: Date;
   updated_at: Date;
-  deleted_at: Date;
   contacts?: Contact[];
 }
 
-export interface IClientWithToken {
-  access_token: string;
+export interface AccessToken {
+  token: string;
+  message: string;
+}
+
+export interface TokenData {
+  access_token: AccessToken;
   client: Client;
 }
 
