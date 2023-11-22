@@ -48,6 +48,8 @@ export interface IContactContext {
   setUpdatedContact: React.Dispatch<React.SetStateAction<Contact | null>>;
   contactsList: [] | Contact[];
   setContactsList: React.Dispatch<React.SetStateAction<Contact[] | []>>;
+  loading: boolean;
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export interface IClientContextProviderProps {

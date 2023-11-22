@@ -88,7 +88,7 @@ const EditContactsModal = () => {
                 buttonstyle="invalid"
                 disabled={true}
               >
-                {loading ? 'Salvando...' : 'Salvar alterações'}
+                {loading ? 'Salvando...' : 'Salvar'}
               </StyledButton>
             ) : (
               <StyledButton
@@ -96,7 +96,7 @@ const EditContactsModal = () => {
                 buttonstyle="primary"
                 disabled={false}
               >
-                {loading ? 'Salvando...' : 'Salvar alterações'}
+                {loading ? 'Salvando...' : 'Salvar'}
               </StyledButton>
             )}
             <StyledButton

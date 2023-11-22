@@ -21,13 +21,15 @@ export const ContactsContextProvider = ({
   const [updatedContact, setUpdatedContact] = useState<Contact | null>(null);
   const [isAddModal, setIsAddModal] = useState(false);
   const [isEditModal, setIsEditModal] = useState(false);
+  const [loading, setLoading] = useState(true);
   const clientToken = localStorage.getItem('@TOKEN');
   const clientId = localStorage.getItem('@CLIENT_ID')!;
 
   useEffect(() => {
-    if (client) {
-      setContactsList([...client.contacts!]);
+    if (client && client.contacts) {
+      setContactsList([...client.contacts]);
     }
+    setLoading(false);
   }, []);
 
   const addContact = async (
@@ -35,7 +37,7 @@ export const ContactsContextProvider = ({
     setLoading: React.Dispatch<React.SetStateAction<boolean>>,
   ) => {
     formData.client_id = clientId;
-  
+
     try {
       setLoading(true);
       const { data } = await api.post<IContactAddResponse>(
@@ -47,9 +49,9 @@ export const ContactsContextProvider = ({
           },
         },
       );
-      
+
       setContactsList((contactsList) => [...contactsList, data]);
-  
+
       toast.success('Contato criado com sucesso.', {
         className: 'toast-sucess',
       });
@@ -61,7 +63,7 @@ export const ContactsContextProvider = ({
       setLoading(false);
       setIsAddModal(false);
     }
-  };  
+  };
 
   const removeContact = async (
     contactId: string,
@@ -150,6 +152,8 @@ export const ContactsContextProvider = ({
         updatedContact,
         contactsList,
         setContactsList,
+        loading,
+        setLoading,
       }}
     >
       {children}

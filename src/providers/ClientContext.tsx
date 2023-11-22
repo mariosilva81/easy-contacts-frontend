@@ -59,17 +59,14 @@ export const ClientContextProvider = ({
   ) => {
     try {
       setLoading(true);
-      const { data } = await api.post<TokenData>(
-        '/session/login',
-        formData,
-      );
-      
+      const { data } = await api.post<TokenData>('/session/login', formData);
+
       setClient(data.client);
       localStorage.setItem('@TOKEN', data.access_token.token);
       localStorage.setItem('@CLIENT_ID', data.client.id);
       navigate(`/dashboard`);
     } catch (error) {
-      toast.error('Cliente não encontrado. Por favor, tente novamente.', {
+      toast.error('E-mail ou senha inválido!', {
         className: 'toast-error',
       });
     } finally {

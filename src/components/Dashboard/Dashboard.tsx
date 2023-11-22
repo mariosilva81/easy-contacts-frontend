@@ -7,11 +7,39 @@ import { useClientContext } from '../../providers/ClientContext';
 import EditClientModal from '../EditClientModal/EditClientModal';
 import RemoveClientModal from '../RemoveClientModal/RemoveClientModal';
 import EditClientPasswordModal from '../EditClientPasswordModal/EditClientPasswordModal';
+import { useEffect, useState } from 'react';
+import { api } from '../../services/api';
+import { Client } from '../../providers/@types';
 
 const Dashboard = () => {
   const { isAddModal, setIsAddModal, contactsList } = useContactsContext();
   const { isEditClientModal, isRemoveClientModal, isEditClientPasswordModal } =
     useClientContext();
+  const [_loading, setLoading] = useState(true);
+  const clientToken = localStorage.getItem('@TOKEN');
+  const clientId = localStorage.getItem('@CLIENT_ID');
+  const [client, setClient] = useState<Client | null>(null);
+
+  useEffect(() => {
+    const loadClient = async () => {
+      try {
+        const { data } = await api.get<Client>(`/clients/${clientId}`, {
+          headers: {
+            Authorization: `Bearer ${clientToken}`,
+          },
+        });
+        setClient(data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (clientToken && clientId) {
+      loadClient();
+    }
+  }, []);
 
   return (
     <>
@@ -34,7 +62,7 @@ const Dashboard = () => {
           <ContactsLists />
         ) : (
           <StyledParagraph fontweight="bold" color="gray">
-            Nenhum contato cadastrado!
+            Nenhum contato cadastrado.
           </StyledParagraph>
         )}
       </div>

@@ -21,6 +21,8 @@ const RemoveClientModal = () => {
     setIsEditClientPasswordModal,
   } = useClientContext();
   const [loading, setLoading] = useState(false);
+  const clientId = localStorage.getItem('@CLIENT_ID');
+  const clientToken = localStorage.getItem('@TOKEN');
 
   const modalRef = useOutClick(() => closeModals());
   const buttonRef = useKeydownPress('Escape', (element) => element?.click());
@@ -29,7 +31,11 @@ const RemoveClientModal = () => {
     try {
       setLoading(true);
 
-      await api.delete(`/clients/${client!.id}`);
+      await api.delete(`/clients/${clientId}`, {
+        headers: {
+          Authorization: `Bearer ${clientToken}`,
+        },
+      });
 
       toast.success('Cliente excluído com sucesso.', {
         className: 'toast-sucess',
@@ -86,7 +92,10 @@ const RemoveClientModal = () => {
               buttonsize="medium"
               buttonstyle="register"
               disabled={loading}
-              onClick={() => closeModals()}
+              onClick={() => {
+                closeModals();
+                setIsEditClientModal(true);
+              }}
             >
               Voltar
             </StyledButton>

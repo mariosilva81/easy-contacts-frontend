@@ -134,7 +134,7 @@ const EditClientModal = () => {
                 buttonstyle="invalid"
                 disabled={true}
               >
-                {loading ? 'Salvando...' : 'Salvar alterações'}
+                {loading ? 'Salvando...' : 'Salvar'}
               </StyledButton>
             ) : (
               <StyledButton
@@ -142,7 +142,7 @@ const EditClientModal = () => {
                 buttonstyle="primary"
                 disabled={false}
               >
-                {loading ? 'Salvando...' : 'Salvar alterações'}
+                {loading ? 'Salvando...' : 'Salvar'}
               </StyledButton>
             )}
             <StyledButton
@@ -161,7 +161,7 @@ const EditClientModal = () => {
               disabled={loading}
               onClick={() => handleDeleteModal()}
             >
-              Excluir cliente
+              Excluir
             </StyledButton>
           </div>
         </FormStyles>

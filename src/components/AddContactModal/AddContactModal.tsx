@@ -9,7 +9,10 @@ import { useContactsContext } from '../../providers/ContactContext';
 import { useState } from 'react';
 import { useOutClick } from '../../hooks/useOutClick';
 import { useKeydownPress } from '../../hooks/useKeydownPress';
-import { TCreateFormValues, createFormSchema } from '../../schemas/createFormSchema';
+import {
+  TCreateFormValues,
+  createFormSchema,
+} from '../../schemas/createFormSchema';
 
 const AddContactsModal = () => {
   const [loading, setLoading] = useState(false);
@@ -37,7 +40,7 @@ const AddContactsModal = () => {
       <StyledContactsModal ref={modalRef}>
         <header>
           <StyledHeadline3 fontweight="bold" fontsize="small">
-            Cadastrar Contato
+            Cadastrar contato
           </StyledHeadline3>
           <StyledParagraph
             fontweight="bold"
@@ -52,7 +55,7 @@ const AddContactsModal = () => {
           <Input
             type="text"
             placeholder="Digite o nome completo"
-            label="Nome"
+            label="Nome completo"
             error={errors.full_name}
             disabled={loading}
             {...register('full_name')}
