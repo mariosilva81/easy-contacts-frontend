@@ -12,7 +12,12 @@ import { api } from '../../services/api';
 import { Client } from '../../providers/@types';
 
 const Dashboard = () => {
-  const { isAddModal, setIsAddModal, contactsList } = useContactsContext();
+  const {
+    isAddModal,
+    setIsAddModal,
+    contactsList,
+    setContactsList,
+  } = useContactsContext();
   const { isEditClientModal, isRemoveClientModal, isEditClientPasswordModal } =
     useClientContext();
   const [_loading, setLoading] = useState(true);
@@ -29,6 +34,7 @@ const Dashboard = () => {
           },
         });
         setClient(data);
+        setContactsList([...data!.contacts!]); // Atualiza a lista de contatos
       } catch (error) {
         console.log(error);
       } finally {
@@ -39,33 +45,38 @@ const Dashboard = () => {
     if (clientToken && clientId) {
       loadClient();
     }
-  }, []);
+  }, [clientToken, clientId, setContactsList]);
 
   return (
     <>
-      {isAddModal ? <AddContactModal /> : null}
-      {isEditClientModal ? <EditClientModal /> : null}
-      {isRemoveClientModal ? <RemoveClientModal /> : null}
-      {isEditClientPasswordModal ? <EditClientPasswordModal /> : null}
-      <div className="dashboardContainer">
-        <div className="contacts-header">
-          <StyledHeadline2 fontsize="medium">Contatos</StyledHeadline2>
-          <StyledButton
-            buttonstyle="disabled"
-            buttonsize="medium"
-            onClick={() => setIsAddModal(true)}
-          >
-            Novo Contato
-          </StyledButton>
+      {(_loading || !contactsList) ? (
+        <p>Carregando...</p>
+      ) : (
+        <div className="dashboardContainer">
+          {isAddModal ? <AddContactModal /> : null}
+          {isEditClientModal ? <EditClientModal /> : null}
+          {isRemoveClientModal ? <RemoveClientModal /> : null}
+          {isEditClientPasswordModal ? <EditClientPasswordModal /> : null}
+
+          <div className="contacts-header">
+            <StyledHeadline2 fontsize="medium">Contatos</StyledHeadline2>
+            <StyledButton
+              buttonstyle="disabled"
+              buttonsize="medium"
+              onClick={() => setIsAddModal(true)}
+            >
+              Novo Contato
+            </StyledButton>
+          </div>
+          {contactsList.length >= 1 ? (
+            <ContactsLists />
+          ) : (
+            <StyledParagraph fontweight="bold" color="gray">
+              Nenhum contato cadastrado.
+            </StyledParagraph>
+          )}
         </div>
-        {contactsList.length >= 1 ? (
-          <ContactsLists />
-        ) : (
-          <StyledParagraph fontweight="bold" color="gray">
-            Nenhum contato cadastrado.
-          </StyledParagraph>
-        )}
-      </div>
+      )}
     </>
   );
 };

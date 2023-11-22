@@ -49,7 +49,6 @@ export const ContactsContextProvider = ({
           },
         },
       );
-
       setContactsList((contactsList) => [...contactsList, data]);
 
       toast.success('Contato criado com sucesso.', {

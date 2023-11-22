@@ -35,6 +35,8 @@ const AddContactsModal = () => {
     reset();
   };
 
+  const hasErrors = Object.keys(errors).length !== 0;
+
   return (
     <div className="modalOverlay" role="dialog">
       <StyledContactsModal ref={modalRef}>
@@ -76,23 +78,13 @@ const AddContactsModal = () => {
             disabled={loading}
             {...register('phone')}
           />
-          {Object.keys(errors).length !== 0 ? (
-            <StyledButton
-              buttonsize="big"
-              buttonstyle="invalid"
-              disabled={true}
-            >
-              {loading ? 'Cadastrando...' : 'Cadastrar'}
-            </StyledButton>
-          ) : (
-            <StyledButton
-              buttonsize="big"
-              buttonstyle="primary"
-              disabled={false}
-            >
-              {loading ? 'Cadastrando...' : 'Cadastrar'}
-            </StyledButton>
-          )}
+          <StyledButton
+            buttonsize="big"
+            buttonstyle={hasErrors ? 'invalid' : 'primary'}
+            disabled={loading || hasErrors}
+          >
+            {loading ? 'Cadastrando...' : 'Cadastrar'}
+          </StyledButton>
         </FormStyles>
       </StyledContactsModal>
     </div>
