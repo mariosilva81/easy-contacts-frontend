@@ -50,7 +50,7 @@ const LoginForm = () => {
       ) : (
         <FormStyles onSubmit={handleSubmit(submit)} noValidate>
           <StyledHeadline1 fontweight="bold" fontsize="big">
-            Login do cliente
+            Login
           </StyledHeadline1>
           <Input
             type="email"

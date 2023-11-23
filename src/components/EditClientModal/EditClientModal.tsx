@@ -94,7 +94,7 @@ const EditClientModal = () => {
       <StyledClientModal ref={modalRef}>
         <header>
           <StyledHeadline3 fontweight="bold" fontsize="small">
-            Detalhes do Cliente
+            Editar perfil
           </StyledHeadline3>
           <StyledParagraph
             fontweight="bold"

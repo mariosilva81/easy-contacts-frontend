@@ -48,7 +48,7 @@ const EditContactsModal = () => {
       <StyledContactsModal ref={modalRef}>
         <header>
           <StyledHeadline3 fontweight="bold" fontsize="small">
-            Detalhes do Contato
+            Editar contato
           </StyledHeadline3>
           <StyledParagraph
             fontweight="bold"

@@ -43,7 +43,6 @@ const RegisterForm = () => {
           <StyledHeadline1 fontweight="bold" fontsize="big">
             Cadastre-se
           </StyledHeadline1>
-          <StyledParagraph>Preencha os dados abaixo</StyledParagraph>
           <Input
             type="text"
             id="name"

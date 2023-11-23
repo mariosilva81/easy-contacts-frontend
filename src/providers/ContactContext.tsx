@@ -52,7 +52,7 @@ export const ContactsContextProvider = ({
         className: 'toast-sucess',
       });
     } catch (error: any) {
-      toast.error(`${error.message}`, {
+      toast.error(`Contato já cadastrado.`, {
         className: 'toast-error',
       });
     } finally {

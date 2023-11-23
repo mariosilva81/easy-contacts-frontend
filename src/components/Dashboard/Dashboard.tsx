@@ -61,7 +61,7 @@ const Dashboard = () => {
               buttonsize="medium"
               onClick={() => setIsAddModal(true)}
             >
-              Novo Contato
+              +
             </StyledButton>
           </div>
           {contactsList.length >= 1 ? (

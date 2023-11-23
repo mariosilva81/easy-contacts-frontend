@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-    --color-color-primary: #4588E6;
+    --color-color-primary: #3672B8;
     --color-color-primary-50:  #599EE3;
     --color-color-primary-disable: #688CB0;
     --color-grey-4: #121214;
