@@ -2,6 +2,7 @@ import { NavStyles } from './style';
 import { StyledButton, StyledLink } from '../../styles/buttons';
 import { useClientContext } from '../../providers/ClientContext';
 import { StyledParagraph } from '../../styles/typography';
+import Logo from '../../assets/logo.png'
 
 interface NavbarProps {
   isbutton?: 'false' | 'true';
@@ -13,7 +14,8 @@ const Navbar = ({ isbutton = 'false', text }: NavbarProps) => {
 
   return (
     <NavStyles isbutton={isbutton === 'true' ? 'true' : 'false'}>
-      <StyledParagraph>Make Contact</StyledParagraph>
+      <img src={Logo} alt="" />
+      <StyledParagraph>EasyContacts</StyledParagraph>
       {isbutton === 'true' && text === 'Voltar' ? (
         <StyledLink to="/" buttonsize="medium" buttonstyle="disabled">
           {text}

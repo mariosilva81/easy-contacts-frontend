@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { RoutesMain } from './routes/RoutesMain';
 import { useClientContext } from './providers/ClientContext';
 import { StyledLoaderContainer } from './styles/grid';
-import { HashLoader } from 'react-spinners';
+import { GridLoader,  } from 'react-spinners';
 
 const App = () => {
   const { globalLoading } = useClientContext();
@@ -13,7 +13,7 @@ const App = () => {
     <>
       {globalLoading ? (
         <StyledLoaderContainer>
-          <HashLoader color="#ff427f" />
+          <GridLoader color="#4588E6" />
         </StyledLoaderContainer>
       ) : (
         <RoutesMain />

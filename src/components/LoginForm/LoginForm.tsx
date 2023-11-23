@@ -1,7 +1,6 @@
 import { FormStyles } from '../../styles/form';
-import HashLoader from 'react-spinners/HashLoader';
+import GridLoader from 'react-spinners/GridLoader';
 import Eye from '../../assets/eye.svg';
-import { StyledParagraph } from '../../styles/typography';
 import { StyledHeadline1 } from '../../styles/typography';
 import Input from '../Input/Input';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -46,7 +45,7 @@ const LoginForm = () => {
     <>
       {loading ? (
         <StyledLoaderContainer>
-          <HashLoader color="#ff427f" />
+          <GridLoader color="#4588E6" />
         </StyledLoaderContainer>
       ) : (
         <FormStyles onSubmit={handleSubmit(submit)} noValidate>
@@ -97,11 +96,8 @@ const LoginForm = () => {
             </StyledButton>
           )}
           <div className="register">
-            <StyledParagraph fontweight="bold">
-              Deseja se cadastrar?
-            </StyledParagraph>
             <StyledLink to="/register" buttonsize="big" buttonstyle="register">
-              Clique aqui
+              Cadastre-se
             </StyledLink>
           </div>
         </FormStyles>

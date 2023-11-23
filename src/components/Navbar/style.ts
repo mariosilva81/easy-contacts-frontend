@@ -12,6 +12,11 @@ export const NavStyles = styled.nav<INavStylesProps>`
     isbutton == 'true' ? 'space-between' : 'center'};
   align-items: center;
   margin: 0 auto;
+  gap: 2rem;
+
+  img {
+    width: 10%; 
+  }
 
   p {
     color: var(--color-color-primary);

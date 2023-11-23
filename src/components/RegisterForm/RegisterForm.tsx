@@ -1,5 +1,5 @@
 import { FormStyles } from '../../styles/form';
-import HashLoader from 'react-spinners/HashLoader';
+import GridLoader from 'react-spinners/GridLoader';
 import { StyledParagraph } from '../../styles/typography';
 import { StyledHeadline1 } from '../../styles/typography';
 import Input from '../Input/Input';
@@ -36,12 +36,12 @@ const RegisterForm = () => {
     <>
       {loading ? (
         <StyledLoaderContainer>
-          <HashLoader color="#ff427f" />
+          <GridLoader color="#4588E6" />
         </StyledLoaderContainer>
       ) : (
         <FormStyles onSubmit={handleSubmit(submit)} noValidate>
           <StyledHeadline1 fontweight="bold" fontsize="big">
-            Registre-se
+            Cadastre-se
           </StyledHeadline1>
           <StyledParagraph>Preencha os dados abaixo</StyledParagraph>
           <Input
