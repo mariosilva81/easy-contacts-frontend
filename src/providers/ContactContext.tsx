@@ -21,7 +21,7 @@ export const ContactsContextProvider = ({
   const [updatedContact, setUpdatedContact] = useState<Contact | null>(null);
   const [isAddModal, setIsAddModal] = useState(false);
   const [isEditModal, setIsEditModal] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const clientToken = localStorage.getItem('@TOKEN');
   const clientId = localStorage.getItem('@CLIENT_ID')!;
 

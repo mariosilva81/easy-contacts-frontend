@@ -34,7 +34,7 @@ const Dashboard = () => {
           },
         });
         setClient(data);
-        setContactsList([...data!.contacts!]); // Atualiza a lista de contatos
+        setContactsList([...data!.contacts!]);
       } catch (error) {
         console.log(error);
       } finally {
