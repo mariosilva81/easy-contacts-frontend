@@ -1,16 +1,23 @@
 import { useClientContext } from '../../providers/ClientContext';
-import { StyledHeadline1, StyledParagraph } from '../../styles/typography';
+import { StyledButton } from '../../styles/buttons';
+import { StyledHeadline1 } from '../../styles/typography';
 import { HeaderStyles } from './styles';
 
 const Header = () => {
-  const { client } = useClientContext();
+  const { client, setIsEditClientModal } = useClientContext();
 
   return (
     <HeaderStyles>
       <StyledHeadline1 fontsize="big" fontweight="bold">
         Olá, {client?.full_name}!
       </StyledHeadline1>
-      <StyledParagraph color="gray">{client?.email}</StyledParagraph>
+      <StyledButton
+            buttonstyle="disabled"
+            buttonsize="medium"
+            onClick={() => setIsEditClientModal(true)}
+          >
+            Editar perfil
+          </StyledButton>
     </HeaderStyles>
   );
 };

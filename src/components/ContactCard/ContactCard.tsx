@@ -26,9 +26,9 @@ const ContactCard = ({ contact }: IContactCardProps) => {
 
   return (
     <StyledContactCard onClick={() => handleOpenEditModal(contact)}>
-      <StyledHeadline3 fontweight="bold" fontsize="small">
+      <StyledParagraph color="gray" className="alter-display">
         {contact.full_name}
-      </StyledHeadline3>
+      </StyledParagraph>
       <StyledParagraph color="gray">{formatPhoneNumber(contact.phone)}</StyledParagraph>
       <StyledParagraph color="gray" className="alter-display">
         {contact.email}

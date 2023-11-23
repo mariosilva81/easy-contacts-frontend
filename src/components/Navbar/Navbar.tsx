@@ -10,7 +10,7 @@ interface NavbarProps {
 }
 
 const Navbar = ({ isbutton = 'false', text }: NavbarProps) => {
-  const { handleLogout, setIsEditClientModal } = useClientContext();
+  const { handleLogout } = useClientContext();
 
   return (
     <NavStyles isbutton={isbutton === 'true' ? 'true' : 'false'}>
@@ -22,13 +22,6 @@ const Navbar = ({ isbutton = 'false', text }: NavbarProps) => {
         </StyledLink>
       ) : isbutton === 'true' && text === 'Sair' ? (
         <div className="buttons-container">
-          <StyledButton
-            buttonstyle="disabled"
-            buttonsize="medium"
-            onClick={() => setIsEditClientModal(true)}
-          >
-            Editar dados
-          </StyledButton>
           <StyledButton
             buttonstyle="disabled"
             buttonsize="medium"

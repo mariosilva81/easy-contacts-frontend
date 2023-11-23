@@ -45,7 +45,7 @@ export const StyledDashBoardContainer = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 0.6875rem;
+    margin-top: 2rem;
     gap: 1.75rem;
   }
 

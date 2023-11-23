@@ -51,7 +51,7 @@ export const ParagraphStyles = css<IParagraphStyles>`
   line-height: 1.6;
   color: ${({ color }) => (color === 'gray' ? '#868E96' : '#ffffff')};
   font-weight: ${({ fontweight }) => (fontweight === 'bold' ? 600 : 400)};
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 `;
 
 export const StyledParagraph = styled.p<IParagraphStyles>`
