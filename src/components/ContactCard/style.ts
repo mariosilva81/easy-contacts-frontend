@@ -20,9 +20,33 @@ export const StyledContactCard = styled.li`
     color: var(--color-grey-0);
   }
 
+  div {
+    width: 100%;
+  }
+
+  #container-phone {
+    text-align: center;
+    width: 50%;
+  }
+
+  #container-email {
+    text-align: right;
+    width: 50%;
+  }
+
   @media (max-width: 600px) {
     .alter-display {
       display: none;
+    }
+  }
+
+  @media (max-width: 400px) {
+    div > p{
+      font-size: 0.7rem;
+    }
+
+    #container-phone {
+      width: 65%;
     }
   }
 `;

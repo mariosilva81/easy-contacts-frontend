@@ -26,15 +26,21 @@ const ContactCard = ({ contact }: IContactCardProps) => {
 
   return (
     <StyledContactCard onClick={() => handleOpenEditModal(contact)}>
-      <StyledParagraph color="gray" className="alter-display">
-        {contact.full_name}
-      </StyledParagraph>
-      <StyledParagraph color="gray">
-        {formatPhoneNumber(contact.phone)}
-      </StyledParagraph>
-      <StyledParagraph color="gray" className="alter-display">
-        {contact.email}
-      </StyledParagraph>
+      <div id='container-name'>
+        <StyledParagraph color="gray">
+          {contact.full_name}
+        </StyledParagraph>
+      </div>
+      <div id='container-phone'>
+        <StyledParagraph color="gray">
+          {formatPhoneNumber(contact.phone)}
+        </StyledParagraph>
+      </div>
+      <div id='container-email'  className="alter-display">
+        <StyledParagraph color="gray">
+          {contact.email}
+        </StyledParagraph>
+      </div>
     </StyledContactCard>
   );
 };
