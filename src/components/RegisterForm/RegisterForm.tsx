@@ -1,6 +1,5 @@
 import { FormStyles } from '../../styles/form';
 import GridLoader from 'react-spinners/GridLoader';
-import { StyledParagraph } from '../../styles/typography';
 import { StyledHeadline1 } from '../../styles/typography';
 import Input from '../Input/Input';
 import { SubmitHandler, useForm } from 'react-hook-form';

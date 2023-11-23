@@ -1,6 +1,6 @@
 import { Contact } from '../../providers/@types';
 import { useContactsContext } from '../../providers/ContactContext';
-import { StyledParagraph, StyledHeadline3 } from '../../styles/typography';
+import { StyledParagraph } from '../../styles/typography';
 import { StyledContactCard } from './style';
 
 interface IContactCardProps {

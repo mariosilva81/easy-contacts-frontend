@@ -19,7 +19,7 @@ const Dashboard = () => {
   const [_loading, setLoading] = useState(true);
   const clientToken = localStorage.getItem('@TOKEN');
   const clientId = localStorage.getItem('@CLIENT_ID');
-  const [client, setClient] = useState<Client | null>(null);
+  const [_client, setClient] = useState<Client | null>(null);
 
   useEffect(() => {
     const loadClient = async () => {
