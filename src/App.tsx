@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { RoutesMain } from './routes/RoutesMain';
 import { useClientContext } from './providers/ClientContext';
 import { StyledLoaderContainer } from './styles/grid';
-import { GridLoader,  } from 'react-spinners';
+import { GridLoader } from 'react-spinners';
 
 const App = () => {
   const { globalLoading } = useClientContext();

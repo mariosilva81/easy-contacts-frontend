@@ -15,7 +15,7 @@ export const NavStyles = styled.nav<INavStylesProps>`
   gap: 2rem;
 
   img {
-    width: 10%; 
+    width: 10%;
   }
 
   p {

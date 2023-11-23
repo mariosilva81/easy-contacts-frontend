@@ -12,12 +12,12 @@ const Header = () => {
         Olá, {client?.full_name}!
       </StyledHeadline1>
       <StyledButton
-            buttonstyle="disabled"
-            buttonsize="medium"
-            onClick={() => setIsEditClientModal(true)}
-          >
-            Editar perfil
-          </StyledButton>
+        buttonstyle="disabled"
+        buttonsize="medium"
+        onClick={() => setIsEditClientModal(true)}
+      >
+        Editar perfil
+      </StyledButton>
     </HeaderStyles>
   );
 };

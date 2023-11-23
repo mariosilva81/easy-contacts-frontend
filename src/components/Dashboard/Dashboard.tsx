@@ -12,12 +12,8 @@ import { api } from '../../services/api';
 import { Client } from '../../providers/@types';
 
 const Dashboard = () => {
-  const {
-    isAddModal,
-    setIsAddModal,
-    contactsList,
-    setContactsList,
-  } = useContactsContext();
+  const { isAddModal, setIsAddModal, contactsList, setContactsList } =
+    useContactsContext();
   const { isEditClientModal, isRemoveClientModal, isEditClientPasswordModal } =
     useClientContext();
   const [_loading, setLoading] = useState(true);
@@ -49,7 +45,7 @@ const Dashboard = () => {
 
   return (
     <>
-      {(_loading || !contactsList) ? (
+      {_loading || !contactsList ? (
         <p>Carregando...</p>
       ) : (
         <div className="dashboardContainer">

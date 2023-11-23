@@ -23,7 +23,6 @@ export const ContactsContextProvider = ({
   const [isEditModal, setIsEditModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const clientToken = localStorage.getItem('@TOKEN');
-  const clientId = localStorage.getItem('@CLIENT_ID')!;
 
   useEffect(() => {
     if (client && client.contacts) {
@@ -36,8 +35,6 @@ export const ContactsContextProvider = ({
     formData: TCreateFormValues,
     setLoading: React.Dispatch<React.SetStateAction<boolean>>,
   ) => {
-    formData.client_id = clientId;
-
     try {
       setLoading(true);
       const { data } = await api.post<IContactAddResponse>(

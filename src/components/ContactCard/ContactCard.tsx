@@ -29,7 +29,9 @@ const ContactCard = ({ contact }: IContactCardProps) => {
       <StyledParagraph color="gray" className="alter-display">
         {contact.full_name}
       </StyledParagraph>
-      <StyledParagraph color="gray">{formatPhoneNumber(contact.phone)}</StyledParagraph>
+      <StyledParagraph color="gray">
+        {formatPhoneNumber(contact.phone)}
+      </StyledParagraph>
       <StyledParagraph color="gray" className="alter-display">
         {contact.email}
       </StyledParagraph>

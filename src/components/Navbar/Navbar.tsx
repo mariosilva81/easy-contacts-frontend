@@ -2,7 +2,7 @@ import { NavStyles } from './style';
 import { StyledButton, StyledLink } from '../../styles/buttons';
 import { useClientContext } from '../../providers/ClientContext';
 import { StyledParagraph } from '../../styles/typography';
-import Logo from '../../assets/logo.png'
+import Logo from '../../assets/logo.png';
 
 interface NavbarProps {
   isbutton?: 'false' | 'true';

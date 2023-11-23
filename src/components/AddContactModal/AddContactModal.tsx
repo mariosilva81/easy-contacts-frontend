@@ -17,6 +17,7 @@ import {
 const AddContactsModal = () => {
   const [loading, setLoading] = useState(false);
   const { addContact, setIsAddModal } = useContactsContext();
+  const clientId = localStorage.getItem('@CLIENT_ID')!;
 
   const modalRef = useOutClick(() => setIsAddModal(false));
   const buttonRef = useKeydownPress('Escape', (element) => element?.click());
@@ -31,6 +32,7 @@ const AddContactsModal = () => {
   });
 
   const submit: SubmitHandler<TCreateFormValues> = async (formData) => {
+    formData.client_id = clientId;
     await addContact(formData, setLoading);
     reset();
   };
@@ -79,6 +81,7 @@ const AddContactsModal = () => {
             {...register('phone')}
           />
           <StyledButton
+            type="submit"
             buttonsize="big"
             buttonstyle={hasErrors ? 'invalid' : 'primary'}
             disabled={loading || hasErrors}

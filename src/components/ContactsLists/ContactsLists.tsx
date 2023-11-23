@@ -1,8 +1,8 @@
-import { produce } from "immer";
-import { useContactsContext } from "../../providers/ContactContext";
-import ContactCard from "../ContactCard/ContactCard";
-import { StyledContactsList } from "./style";
-import EditContactModal from "../EditContactModal/EditContactModal";
+import { produce } from 'immer';
+import { useContactsContext } from '../../providers/ContactContext';
+import ContactCard from '../ContactCard/ContactCard';
+import { StyledContactsList } from './style';
+import EditContactModal from '../EditContactModal/EditContactModal';
 
 const ContactsLists = () => {
   const { isEditModal, contactsList } = useContactsContext();
