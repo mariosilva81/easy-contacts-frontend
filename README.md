@@ -78,14 +78,14 @@ git clone git@github.com:mariosilva81/m6-fullstack-project-frontend.git
 ```bash
 git clone git@github.com:mariosilva81/m6-fullstack-project-backend.git
 ```
-Verfique o README.md na raiz do projeto do back-end para mais detalhes.
+Para mais informações sobre o back-end, verfique o README.md na raiz do projeto.
 
 3. Instale as dependências: 
 
 ```bash
 npm install 
 
-ou 
+# ou 
 
 yarn install
 ```
@@ -96,10 +96,10 @@ Execute o seguinte comando para iniciar o servidor:
 
 ```bash
 # development
-$ npm run dev
+npm run dev
 
 # production
-$ npm run build
+npm run build
 ```
 
 A aplicação estará acessível localmente em [http://localhost:5173](http://localhost:5173). 
