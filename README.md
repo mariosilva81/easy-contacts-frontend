@@ -24,7 +24,6 @@ Mario Silva
   <img src="https://cdn-icons-png.flaticon.com/512/919/919832.png" height="50" alt="Typescript" style="margin-right: 10px;">
   <img src="https://seeklogo.com/images/Z/zod-logo-B57E684330-seeklogo.com.png" height="50" alt="Zod" style="margin-right: 10px;">
   <img src="https://user-images.githubusercontent.com/43313420/105893220-1bae8780-6013-11eb-87be-eeac845ecc6f.png" height="50" alt="Axios" style="margin-right: 10px;">
-  <img src="https://static-00.iconduck.com/assets.00/swagger-icon-512x512-halz44im.png" height="50" alt="Swagger">
 </div>
 
 ## Scripts
