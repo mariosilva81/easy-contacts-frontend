@@ -146,6 +146,10 @@ Verifique o arquivo `insomnia.json` disponibilizado na raiz do projeto. Nele est
 
 Para mais informações, consulte a documentação disponível em [http://localhost:3000/doc](http://localhost:3000/doc). Disponível apenas com o servidor do back-end rodando.
 
+## Deploy
+
+Caso queira testar a aplicação em produção, a mesma está disponível em [https://easy-contacts-tan.vercel.app](https://easy-contacts-tan.vercel.app).
+
 ## Contato
 
 Para questões ou sugestões, entre em contato através do email: mariosilva.81@icloud.com.
