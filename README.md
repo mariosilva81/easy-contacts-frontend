@@ -107,7 +107,7 @@ Lembrando que o projeto de back-end precisa estar rodando para que o front-end f
 ## Estrutura do Projeto
 
 ```
-m6-fullstack-project/
+easy-contacts-frontend/
 │
 ├── node_modules/         Pacotes e dependências do projeto.
 │
